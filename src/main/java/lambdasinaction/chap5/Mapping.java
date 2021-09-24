@@ -32,6 +32,15 @@ public class Mapping{
         // flatMap
         List<Integer> numbers1 = Arrays.asList(1,2,3,4,5);
         List<Integer> numbers2 = Arrays.asList(6,7,8);
+        List<int[]> pairs0 =
+                numbers1.stream()
+                        .flatMap((Integer i) -> numbers2.stream()
+                                .map((Integer j) -> new int[]{i, j})
+                        )
+                        .collect(toList());
+        pairs0.forEach(pair -> System.out.println("(" + pair[0] + ", " + pair[1] + ")"));
+        System.out.println("================");
+        // 筛选被3整除的数对
         List<int[]> pairs =
                         numbers1.stream()
                                 .flatMap((Integer i) -> numbers2.stream()
