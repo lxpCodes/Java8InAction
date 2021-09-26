@@ -12,6 +12,7 @@ public class BestPriceFinderMain {
         execute("parallel", () -> bestPriceFinder.findPricesParallel("myPhone27S"));
         execute("composed CompletableFuture", () -> bestPriceFinder.findPricesFuture("myPhone27S"));
         execute("combined USD CompletableFuture", () -> bestPriceFinder.findPricesInUSD("myPhone27S"));
+        execute("combined USD CompletableFuture java7", () -> bestPriceFinder.findPricesInUSDJava7("myPhone27S"));
         execute("combined USD CompletableFuture v2", () -> bestPriceFinder.findPricesInUSD2("myPhone27S"));
         execute("combined USD CompletableFuture v3", () -> bestPriceFinder.findPricesInUSD3("myPhone27S"));
     }
